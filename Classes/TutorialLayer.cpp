@@ -39,101 +39,18 @@ bool TutorialLayer::init() {
     
     winSize = Director::getInstance()->getWinSize();
     
-    auto bg = Sprite::create("res/backGround2.png");
+    auto bg = Sprite::create("bg_Loading.png");
     bg->setPosition(winSize / 2);
     this->addChild(bg);
     
     
-    
-    m_timeBarTop = Sprite::create("res/timeBar.png");
-    m_timeBarTop->setPosition(Vec2(winSize.width / 2, winSize.height - 15));
-    this->addChild(m_timeBarTop);
-    m_timeBarTop->setOpacity(0);
-    
-    m_canTap = false;
-    
-    m_numberTut = 0;
-    
-    int z = 0;
-    int offSet = 155;
-    int m_offsetY = 75;
-    
-    m_listCircleTiles = new Vector<CircleTile*>();
-    
-    for(int i = 0; i < 2; i++) {
-        for(int j = 0; j < 2; j ++) {
-            auto tile = CircleTile::create();
-            tile->setPosition(winSize.width / 2 + std::pow(-1, j) * offSet, winSize.height / 2 + std::pow(-1, i) * offSet - m_offsetY);
-            tile->setIdTile(z);
-            tile->hide();
-            this->addChild(tile);
-            m_listCircleTiles->pushBack(tile);
-            z++;
-            
-        }
-    }
-
-    m_blackBackGround = Scale9Sprite::create("res/button.png", Rect(10, 10, 10, 10));
-    m_blackBackGround->setContentSize(Size(winSize.width, winSize.height));
-    m_blackBackGround->setPosition(winSize / 2);
-    addChild(m_blackBackGround);
-    m_blackBackGround->setVisible(false);
-
-    //init winlayer
-    m_winLayer = Layer::create();
-    m_winLayer->setPosition(winSize / 2);
-    addChild(m_winLayer,99);
-    
-    this->resetWinLayer();
-    
-    auto backGround = Sprite::create("res/backGround2.png");
-    m_winLayer->addChild(backGround);
-    
-    m_labelScore = Label::createWithTTF("0", FONT_AACHENB, 120);
-    m_labelScore->setPositionY(110);
-    m_labelScore->enableShadow();
-    m_winLayer->addChild(m_labelScore);
-    
-    m_status = Label::createWithTTF("", FONT_AACHENB, 45);
-    m_status->setAlignment(TextHAlignment::CENTER);
-    m_status->setPosition(winSize / 2);
-    m_status->setOpacity(0);
-    addChild(m_status);
-    
-    m_textWelcome = Label::createWithTTF("Welcome to Color Tap game", FONT_AACHENB, 50);
-    m_textWelcome->setPosition(winSize / 2);
-    m_textWelcome->setOpacity(0);
-    addChild(m_textWelcome);
-    m_textWelcome->runAction(Sequence::create(MoveBy::create(1.3, Vec2(0, 130)), DelayTime::create(1.0), CallFunc::create([=]() {
-        m_textWelcome->runAction(Sequence::create(FadeOut::create(0.7), CallFunc::create([=]() {
-            
-            m_timeBarTop->runAction(Sequence::create(DelayTime::create(2.5),CallFunc::create([=]() {
-                m_blackBackGround->setVisible(true);
-                
-                m_status->setString("Now ! look the circle run \n and remember");
-                m_status->runAction(Sequence::create(FadeIn::create(0.2),DelayTime::create(2.2), CallFunc::create([=]() {
-                    m_status->setOpacity(0);
-                    m_blackBackGround->setVisible(false);
-                    
-                    this->doTutorial();
-                    
-                }) ,NULL) );
-                
-            }) , NULL) );
-            for(auto tile : *m_listCircleTiles) {
-                tile->show(0.7);
-            }
-            
-        }),NULL));
-        
-    }), NULL));
-    m_textWelcome->runAction(FadeIn::create(1.5));
+    this->runAction(Sequence::create(DelayTime::create(5.0), CallFunc::create([=]() {
+        auto scene = HelloWorld::createScene();
+        Director::getInstance()->replaceScene(scene);
+    }) ,NULL));
     
     
-    m_hand = Sprite::create("res/hand.png");
-    m_hand->setVisible(false);
-    addChild(m_hand, 1000);
-    
+   
     return true;
 }
 

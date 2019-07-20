@@ -70,7 +70,7 @@ bool AppDelegate::applicationDidFinishLaunching() {
     director->setDisplayStats(false);
     Size screenSize = glview->getFrameSize();
     
-    glview->setDesignResolutionSize(640, 640 * screenSize.height / screenSize.width, ResolutionPolicy::NO_BORDER);
+    glview->setDesignResolutionSize(1136, 640, ResolutionPolicy::NO_BORDER);
     
     
     register_all_packages();
@@ -94,17 +94,10 @@ bool AppDelegate::applicationDidFinishLaunching() {
     //ResourceManager::getInstance();
 
     // create a scene. it's an autorelease object
-    bool tut = UserDefault::getInstance()->getBoolForKey(KEY_TUTORIAL);
-    if(tut) {
-        
-        auto scene = HelloWorld::createScene();
-        director->runWithScene(scene);
-        
-    } else {
-        
-        auto scene = TutorialLayer::createScene();
-        director->runWithScene(scene);
-    }
+   
+    auto scene = TutorialLayer::createScene();
+    director->runWithScene(scene);
+    
     // run
 
     return true;

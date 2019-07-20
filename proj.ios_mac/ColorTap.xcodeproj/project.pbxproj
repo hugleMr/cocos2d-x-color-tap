@@ -30,6 +30,8 @@
 		0E0EA7DA22E03D36006CC799 /* color.png in Resources */ = {isa = PBXBuildFile; fileRef = 0E0EA7D522E03D36006CC799 /* color.png */; };
 		0E0EA7DC22E03ED9006CC799 /* soundR.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0E0EA7DB22E03ED9006CC799 /* soundR.mp3 */; };
 		0E0EA7DF22E04401006CC799 /* TutorialLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0E0EA7DD22E04401006CC799 /* TutorialLayer.cpp */; };
+		0E9EC67B22E2F63600884D76 /* bg_new.png in Resources */ = {isa = PBXBuildFile; fileRef = 0E9EC67A22E2F63600884D76 /* bg_new.png */; };
+		0ED89E4D22E2FB5E005C55D6 /* bg_Loading.png in Resources */ = {isa = PBXBuildFile; fileRef = 0ED89E4B22E2FB5E005C55D6 /* bg_Loading.png */; };
 		1A88B2641FC3D9C9005C14AE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A88B2631FC3D9C9005C14AE /* Images.xcassets */; };
 		1AC6FB21180E996B004C840B /* libcocos2d Mac.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AC6FAF9180E9839004C840B /* libcocos2d Mac.a */; };
 		1AC6FB30180E99EB004C840B /* libcocos2d iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AC6FB07180E9839004C840B /* libcocos2d iOS.a */; };
@@ -148,6 +150,8 @@
 		0E0EA7DB22E03ED9006CC799 /* soundR.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = soundR.mp3; sourceTree = "<group>"; };
 		0E0EA7DD22E04401006CC799 /* TutorialLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TutorialLayer.cpp; sourceTree = "<group>"; };
 		0E0EA7DE22E04401006CC799 /* TutorialLayer.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = TutorialLayer.hpp; sourceTree = "<group>"; };
+		0E9EC67A22E2F63600884D76 /* bg_new.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg_new.png; sourceTree = "<group>"; };
+		0ED89E4B22E2FB5E005C55D6 /* bg_Loading.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg_Loading.png; sourceTree = "<group>"; };
 		1A88B2631FC3D9C9005C14AE /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		1AC6FAE5180E9839004C840B /* cocos2d_libs.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = cocos2d_libs.xcodeproj; path = ../cocos2d/build/cocos2d_libs.xcodeproj; sourceTree = "<group>"; };
 		1ACB3243164770DE00914215 /* libcurl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcurl.a; path = ../../cocos2dx/platform/third_party/ios/libraries/libcurl.a; sourceTree = "<group>"; };
@@ -320,6 +324,8 @@
 		46880B7519C43A67006E1F66 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				0ED89E4B22E2FB5E005C55D6 /* bg_Loading.png */,
+				0E9EC67A22E2F63600884D76 /* bg_new.png */,
 				0E0EA7DB22E03ED9006CC799 /* soundR.mp3 */,
 				0E0EA7D322E03D35006CC799 /* bacdk.png */,
 				0E0EA7D522E03D36006CC799 /* color.png */,
@@ -401,6 +407,7 @@
 				1D60588D0D05DD3D006BFB54 /* Resources */,
 				1D60588E0D05DD3D006BFB54 /* Sources */,
 				1D60588F0D05DD3D006BFB54 /* Frameworks */,
+				0E9EC67C22E2F6BF00884D76 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -496,6 +503,7 @@
 				0E0EA7C522E0228A006CC799 /* soundQ.mp3 in Resources */,
 				46880B8119C43A67006E1F66 /* HelloWorld.png in Resources */,
 				1A88B2641FC3D9C9005C14AE /* Images.xcassets in Resources */,
+				0ED89E4D22E2FB5E005C55D6 /* bg_Loading.png in Resources */,
 				0E0EA7D822E03D36006CC799 /* bacdk.png in Resources */,
 				0E0EA7C422E0228A006CC799 /* hightScore.mp3 in Resources */,
 				46880B7D19C43A67006E1F66 /* CloseSelected.png in Resources */,
@@ -517,6 +525,7 @@
 				0E0EA7CA22E0228A006CC799 /* click.mp3 in Resources */,
 				0E0EA7D622E03D36006CC799 /* fa.png in Resources */,
 				0E0EA7D922E03D36006CC799 /* sao.png in Resources */,
+				0E9EC67B22E2F63600884D76 /* bg_new.png in Resources */,
 				46880B7B19C43A67006E1F66 /* CloseNormal.png in Resources */,
 				1AF87B881F6F781D007BE51C /* LaunchScreen.storyboard in Resources */,
 			);
@@ -536,6 +545,26 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0E9EC67C22E2F6BF00884D76 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "xattr -cr ~/Library/Developer/Xcode/DerivedData || echo Clear\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		1D60588E0D05DD3D006BFB54 /* Sources */ = {

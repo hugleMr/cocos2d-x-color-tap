@@ -61,14 +61,14 @@ bool GamePlay::init() {
     
     gameStatus = GameStatus::READY;
     
-    auto bg = Sprite::create("res/backGround2.png");
+    auto bg = Sprite::create("bg_new.png");
     bg->setPosition(winSize / 2);
     this->addChild(bg);
     
     m_listCircleTiles = new Vector<CircleTile* >();
     
-    int offSet = 155;
-    int m_offsetY = 75;
+    int offSet = 140;
+    int m_offsetY = 30;
     int z = 0;
     
     m_timeBarPos = Vec2(winSize.width / 2, winSize.height - 15);
@@ -89,11 +89,11 @@ bool GamePlay::init() {
     m_winLayer->setPosition(winSize / 2);
     addChild(m_winLayer,99);
     
-    auto backGround = Sprite::create("res/backGround2.png");
+    auto backGround = Sprite::create("bg_new.png");
     m_winLayer->addChild(backGround);
     
     m_labelScore = Label::createWithTTF("0", FONT_AACHENB, 120);
-    m_labelScore->setPositionY(110);
+    m_labelScore->setPositionY(90);
     m_labelScore->enableShadow();
     m_winLayer->addChild(m_labelScore);
     
@@ -131,7 +131,7 @@ bool GamePlay::init() {
         }
     }
     
-    float offSetY = 310;
+    float offSetY = 210;
     
     m_gameTapText = Label::createWithTTF("1", FONT_AACHENB, 70);
     m_gameTapText->setPosition(winSize.width / 2, winSize.height / 2 + offSetY);

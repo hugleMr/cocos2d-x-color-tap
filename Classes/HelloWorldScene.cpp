@@ -70,7 +70,7 @@ bool HelloWorld::init()
     
     canTap = false;
     
-    auto bg = Sprite::create("bacdk.png");
+    auto bg = Sprite::create("bg_new.png");
     bg->setPosition(winSize / 2);
     this->addChild(bg);
     
@@ -86,6 +86,7 @@ bool HelloWorld::init()
     
     
     auto buttonPlay = Button::create("play.png");
+    buttonPlay->setScale(0.7);
     buttonPlay->setPosition(Point(winSize.width / 2, -100));
     buttonPlay->addTouchEventListener([&](Ref* sender, cocos2d::ui::Widget::TouchEventType type){
         switch (type)
@@ -160,7 +161,8 @@ bool HelloWorld::init()
     
     
     auto title = Sprite::create("color.png");
-    title->setPosition(winSize.width / 2, winSize.height * 2 / 3 + 20);
+    title->setScale(0.7);
+    title->setPosition(winSize.width / 2, winSize.height * 2 / 3 - 20);
     this->addChild(title);
     title->setOpacity(0);
     title->runAction(Sequence::create(DelayTime::create(0.1), CallFunc::create([=](){

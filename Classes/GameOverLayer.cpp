@@ -18,12 +18,12 @@ bool GameOverLayer::init() {
     
     winSize = Director::getInstance()->getWinSize();
     
-    auto bg = Sprite::create("res/backGround2.png");
+    auto bg = Sprite::create("bg_new.png");
     bg->setPosition(winSize / 2);
     this->addChild(bg);
     
     m_textGameOver = Label::createWithTTF("Game Over", "fonts/AACHENB.TTF", 90);
-    m_textGameOver->setPosition(winSize / 2 + Size(0, 260));
+    m_textGameOver->setPosition(winSize / 2 + Size(0, 240));
     m_textGameOver->enableShadow();
     this->addChild(m_textGameOver);
     
@@ -100,8 +100,8 @@ bool GameOverLayer::init() {
 
     
     buttonPlay = Button::create("play.png");
-    //buttonPlay->setScale(0.8);
-    buttonPlay->setPosition(Point(winSize.width / 2, winSize.height / 2 - 250));
+    buttonPlay->setScale(0.8);
+    buttonPlay->setPosition(Point(winSize.width / 2, winSize.height / 2 - 200));
     buttonPlay->addTouchEventListener([&](Ref* sender, cocos2d::ui::Widget::TouchEventType type){
         switch (type)
         {
@@ -141,6 +141,7 @@ bool GameOverLayer::init() {
         }
     });
     this->addChild(buttonHome);
+    buttonHome->setVisible(false);
     buttonHome->setOpacity(0);
 
     buttonShop = Button::create("res/share.png");
@@ -161,6 +162,7 @@ bool GameOverLayer::init() {
                 
         }
     });
+    buttonShop->setVisible(false);
     this->addChild(buttonShop);
     buttonShop->setOpacity(0);
     
@@ -386,11 +388,11 @@ void GameOverLayer::update(float dt) {
                 buttonPlay->runAction(MoveBy::create(0.15, Vec2(0, 20)));
                 buttonPlay->runAction(FadeIn::create(0.15));
                 
-                buttonHome->setVisible(true);
+                //buttonHome->setVisible(true);
                 buttonHome->runAction(MoveBy::create(0.15, Vec2(0, 20)));
                 buttonHome->runAction(FadeIn::create(0.15));
                 
-                buttonShop->setVisible(true);
+                //buttonShop->setVisible(true);
                 buttonShop->runAction(MoveBy::create(0.15, Vec2(0, 20)));
                 buttonShop->runAction(FadeIn::create(0.15));
                 
