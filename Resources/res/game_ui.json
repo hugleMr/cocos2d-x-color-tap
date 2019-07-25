@@ -1,0 +1,11 @@
+{
+    "sheets": [
+        { 
+            "coordinatesFileName": "game_ui.plist",
+            "textureFileName": "game_ui.png",
+            "width": 286.0,
+            "height": 786.0
+        }
+    ],
+    "signature": "04cedc5edc4db30438050ff7592aaa032ece0714"
+}
